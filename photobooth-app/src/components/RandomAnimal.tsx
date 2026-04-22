@@ -31,7 +31,7 @@ export default function RandomAnimal(props: { photoTaken: boolean }) {
     );
 
     if (!props.photoTaken) {
-        return <CatWrapper>this is your cat</CatWrapper>;
+        return null;
     }
 
     return (
