@@ -6,6 +6,7 @@ import './App.css'
 import RandomMeme from './components/RandomMeme'
 import RandomAnimal from './components/RandomAnimal'
 import Webcam from './components/Webcam'
+import RandomColor from "./components/RandomColor.tsx";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -131,6 +132,7 @@ function App() {
       <section id="spacer"></section>
       <RandomMeme photoTaken={true} />
       <RandomAnimal key={photoCount} photoTaken={true} />
+      <RandomColor  photoTaken={true}/>
 
     </>
   )
