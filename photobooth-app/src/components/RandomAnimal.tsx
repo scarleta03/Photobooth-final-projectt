@@ -14,7 +14,9 @@ const CatImg = styled.img`
     width: 400px;
     height: 400px;
     object-fit: cover;            /* crops the image to fill the box without stretching */
-    border-radius: 12px;          /* rounded corners on the image */
+    border-style: outset;
+    border-width: 10px;
+    border-radius: 60px;
 `;
 
 // All valid HTTP status codes that http.cat has a cat photo for

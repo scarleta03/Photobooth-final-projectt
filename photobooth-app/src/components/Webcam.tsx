@@ -18,9 +18,19 @@ const StyledDiv = styled.div`
 `
 
 export const StyledButton = styled.button`
-    padding: auto;
-    margin: 10px;
+    margin: 12px 0;
+    padding: 10px 28px;
+    background-color: #dd9fe3;
+    color: white;
+    border-style: outset;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
 
+    &:hover {
+        background-color: #dd9fe3;
+    }
 `
 
 const Webcam = ({setCapturedImage} : any) => (

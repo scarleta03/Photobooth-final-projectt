@@ -10,9 +10,12 @@ const StyledMeme = styled.div`
 const MemeImg = styled.img`
   width: 400px;
   height: 400px;
+  border-style: outset;
+  border-width: 10px;
+  border-radius: 60px;
 `
 
-// Your Giphy API key — get one free at developers.giphy.com
+
 const GIPHY_API_KEY = '2P1VkbCPRbPBy6KV6rrzzs9aBH0IvNDd'
 
 // Describes the shape of an image object returned by Giphy
@@ -93,7 +96,7 @@ export default function RandomMeme({ photoTaken }: RandomMemeProps) {
         {/* Once loaded, display the GIF and its title */}
         {memeUrl && !loading && (
             <>
-              <MemeImg src={memeUrl} alt={memeTitle} style={{maxWidth: '100%', borderRadius: '8px'}}/>
+              <MemeImg src={memeUrl} alt={memeTitle} />
 
             </>
 
