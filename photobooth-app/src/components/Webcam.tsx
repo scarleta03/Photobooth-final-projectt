@@ -33,6 +33,7 @@ export const StyledButton = styled.button`
 
 
 const Webcam = ({setCapturedImage} : any) => (
+
     <StyledDiv>
 
         <ReactWebcam
@@ -43,6 +44,8 @@ const Webcam = ({setCapturedImage} : any) => (
             width={640}
             videoConstraints={videoConstraints}
             style={{
+
+                objectFit: "cover",
                 border: "10px ridge #B562BAFF",
                 borderRadius: "8px",
             }}
