@@ -12,7 +12,7 @@ const CatWrapper = styled.div`
     justify-content: center;      /* centers children vertically */
     border-radius: 16px;          /* rounded corners */
     padding: 1rem;
-    margin: 2rem auto;            /* centers the card on the page */
+    margin: auto;            /* centers the card on the page */
     outline: none;                /* removes the pink browser focus border */
 `;
 
@@ -21,7 +21,6 @@ const CatImg = styled.img`
     width: 400px;
     height: 400px;
     object-fit: cover;            /* crops the image to fill the box without stretching */
-    margin-bottom: 1rem;
     border-radius: 12px;          /* rounded corners on the image */
 `;
 

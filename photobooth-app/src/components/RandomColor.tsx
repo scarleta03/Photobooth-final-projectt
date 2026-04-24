@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {useState} from "react";
 
 const StyledRandColor = styled.div`
-    margin: 0 auto;
+    margin: auto;
     box-sizing: border-box;
    
 `

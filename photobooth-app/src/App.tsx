@@ -13,6 +13,15 @@ const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+`
+
+const StyledBox = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    //justify-content: center;
+    
 `
 
 function App() {
@@ -149,8 +158,11 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
-      {capturedImage && <RandomMeme photoTaken={true} />}
-      {capturedImage && <RandomAnimal photoTaken={true} />}{capturedImage && <RandomColor photoTaken={true} />}
+        <StyledBox>
+            {capturedImage && <RandomMeme photoTaken={true} />}
+            {capturedImage && <RandomAnimal photoTaken={true} />}
+            {capturedImage && <RandomColor photoTaken={true} />}
+        </StyledBox>
 
     </>
   )
