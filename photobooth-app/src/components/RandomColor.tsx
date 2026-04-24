@@ -14,7 +14,9 @@ const StyledBlock = styled.div<{color : string}>`
     background-color: ${(props)=>props.color};
     width: 400px;
     height: 400px;
-    border-radius: 12px;
+    border-style: outset;
+    border-width: 10px;
+    border-radius: 60px;
 `
 interface RandomColorProps {
     photoTaken: boolean
