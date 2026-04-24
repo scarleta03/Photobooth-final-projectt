@@ -18,18 +18,18 @@ const StyledDiv = styled.div`
 `
 
 export const StyledButton = styled.button`
-    margin: 12px 0;
-    padding: 10px 28px;
+    margin: 20px;
+    padding: 10px 30px;
     background-color: #dd9fe3;
     color: white;
-    border-style: outset;
+    border: 5px outset #b562ba;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     cursor: pointer;
 
     &:hover {
-        background-color: #dd9fe3;
+        background-color: #c872d5;
     }
 `
 
