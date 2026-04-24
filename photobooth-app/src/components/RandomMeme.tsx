@@ -10,8 +10,7 @@ const StyledMeme = styled.div`
 const MemeImg = styled.img`
   width: 400px;
   height: 400px;
-  border-style: outset;
-  border-width: 10px;
+  border: 10px ridge #B562BAFF;
   border-radius: 60px;
 `
 

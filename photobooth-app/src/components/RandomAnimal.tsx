@@ -13,9 +13,8 @@ const CatWrapper = styled.div`
 const CatImg = styled.img`
     width: 400px;
     height: 400px;
-    object-fit: cover;            /* crops the image to fill the box without stretching */
-    border-style: outset;
-    border-width: 10px;
+    object-fit: cover;
+    border: 10px ridge #B562BAFF;
     border-radius: 60px;
 `;
 

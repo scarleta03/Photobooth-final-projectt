@@ -13,8 +13,6 @@ const StyledDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: #aa3bff;
-    border-radius: 5px;
 `
 
 export const StyledButton = styled.button`

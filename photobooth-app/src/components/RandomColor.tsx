@@ -14,8 +14,7 @@ const StyledBlock = styled.div<{color : string}>`
     background-color: ${(props)=>props.color};
     width: 400px;
     height: 400px;
-    border-style: outset;
-    border-width: 10px;
+    border: 10px ridge #B562BAFF;
     border-radius: 60px;
 `
 interface RandomColorProps {

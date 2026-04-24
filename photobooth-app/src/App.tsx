@@ -27,9 +27,13 @@ const StyledBox = styled.div`
         flex-direction: column;
 
     }
-
-    
 `
+const StyledImg = styled.img`
+    border: 8px ridge #B562BAFF;
+    border-radius: 8px;
+    margin: 10px;
+`
+
 
 function App() {
   const [capturedImage, setCapturedImage] = useState<string | null>(null)
@@ -39,14 +43,16 @@ function App() {
           
           <div>
               <StyledContainer>
+
                   <h1>Webcam Feature</h1>
+
                   {!capturedImage && (
                       <Webcam
                           setCapturedImage={setCapturedImage}
                       />
 
                   )}
-                  {capturedImage && <img src={capturedImage}/>}
+                  {capturedImage && <StyledImg src={capturedImage}/>}
                   {capturedImage && <StyledButton onClick={() => setCapturedImage(null)}>Retake</StyledButton>}
               </StyledContainer>
           </div>
