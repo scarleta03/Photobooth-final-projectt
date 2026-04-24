@@ -3,17 +3,10 @@ import styled from "styled-components";
 
 // Wrapper div that centers the cat card on the page
 const CatWrapper = styled.div`
-    width: 400px;
-    min-height: 200px;
-    color: white;
-    display: flex;                /* lines up the text and image vertically */
+    display: flex;
     flex-direction: column;
-    align-items: center;          /* centers children horizontally */
-    justify-content: center;      /* centers children vertically */
-    border-radius: 16px;          /* rounded corners */
-    padding: 1rem;
-    margin: 2rem auto;            /* centers the card on the page */
-    outline: none;                /* removes the pink browser focus border */
+    align-items: center;
+    
 `;
 
 // Styled img tag for the cat photo
@@ -21,7 +14,6 @@ const CatImg = styled.img`
     width: 400px;
     height: 400px;
     object-fit: cover;            /* crops the image to fill the box without stretching */
-    margin-bottom: 1rem;
     border-radius: 12px;          /* rounded corners on the image */
 `;
 
@@ -40,7 +32,7 @@ export default function RandomAnimal({ photoTaken }: { photoTaken: boolean }) {
     return (
         <CatWrapper>
             {/* Label above the image */}
-            <p>Your HTTP cat picture :D</p>
+            <h1>Your HTTP Cat Picture</h1>
 
             {/* Fetches the cat image from http.cat using the random code */}
             <CatImg

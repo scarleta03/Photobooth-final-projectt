@@ -2,6 +2,7 @@ import ReactWebcam from "react-webcam"
 import styled from "styled-components";
 
 
+
 const videoConstraints = {
     width: 1280,
     height: 720,

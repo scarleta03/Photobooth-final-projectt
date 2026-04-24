@@ -3,16 +3,18 @@ import styled from "styled-components";
 
 import {useState} from "react";
 
+
 const StyledRandColor = styled.div`
-    margin: 0 auto;
-    box-sizing: border-box;
-   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 `
 const StyledBlock = styled.div<{color : string}>`
     background-color: ${(props)=>props.color};
     width: 400px;
     height: 400px;
-    border-radius: 15px;
+    border-radius: 12px;
 `
 interface RandomColorProps {
     photoTaken: boolean
@@ -25,7 +27,7 @@ export default function RandomColor({ photoTaken }: RandomColorProps) {
      if (!photoTaken) return (<></>)
     return(
         <StyledRandColor>
-            <h1>Your color is:</h1>
+            <h1>Your Color Is</h1>
             <StyledBlock color = {randomColor}/>
         </StyledRandColor>
     );

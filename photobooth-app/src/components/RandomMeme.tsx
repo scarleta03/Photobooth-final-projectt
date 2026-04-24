@@ -1,4 +1,16 @@
 import { useState, useEffect } from 'react'
+import styled from "styled-components";
+
+const StyledMeme = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const MemeImg = styled.img`
+  width: 400px;
+  height: 400px;
+`
 
 // Your Giphy API key — get one free at developers.giphy.com
 const GIPHY_API_KEY = '2P1VkbCPRbPBy6KV6rrzzs9aBH0IvNDd'
@@ -72,19 +84,21 @@ export default function RandomMeme({ photoTaken }: RandomMemeProps) {
   if (!photoTaken) return null
 
   return (
-    <div className="random-meme">
-      <h3>Your Random Meme</h3>
-      {/* Show a loading message while waiting for Giphy to respond */}
-      {loading && <p>Loading meme...</p>}
-      {/* Show the error message if something went wrong */}
-      {error && <p className="error">{error}</p>}
-      {/* Once loaded, display the GIF and its title */}
-      {memeUrl && !loading && (
-        <>
-          <img src={memeUrl} alt={memeTitle} style={{ maxWidth: '100%', borderRadius: '8px' }} />
-          <p>{memeTitle}</p>
-        </>
-      )}
-    </div>
+      <div className="random-meme">
+        <StyledMeme><h1>Your Meme</h1>
+        {/* Show a loading message while waiting for Giphy to respond */}
+        {loading && <p>Loading meme...</p>}
+        {/* Show the error message if something went wrong */}
+        {error && <p className="error">{error}</p>}
+        {/* Once loaded, display the GIF and its title */}
+        {memeUrl && !loading && (
+            <>
+              <MemeImg src={memeUrl} alt={memeTitle} style={{maxWidth: '100%', borderRadius: '8px'}}/>
+
+            </>
+
+        )}
+        </StyledMeme>
+      </div>
   )
 }
