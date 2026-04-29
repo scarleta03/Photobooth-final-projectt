@@ -45,21 +45,26 @@ const ColorBlock = styled.div<{ color: string }>`
 `;
 
 const DownloadBtn = styled.button`
-  margin-top: 16px;
-  background: #111;
-  color: #ffe500;
-  font-family: "Courier New", monospace;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border: 3px solid #111;
-  padding: 12px 28px;
-  cursor: pointer;
-  box-shadow: 4px 4px 0px #ffe500;
+    margin-top: 16px;
+    background: #5c489a;
+    color: #d6cde6;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 3px solid #5c489a;
+    padding: 12px 28px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #d6cde6;
 
-  &:hover { opacity: 0.85; }
-  &:disabled { opacity: 0.4; cursor: not-allowed; }
+    &:hover {
+        opacity: 0.85;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
 `;
 
 interface PhotoStripProps {
