@@ -89,8 +89,10 @@ export default function PhotoStrip({ selfieUrl, catUrl, memeUrl, randomColor }: 
     };
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <Strip ref={stripRef}>
+
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+
+        <Strip ref={stripRef}>
                 <Title> Photo Strip </Title>
                 {selfieUrl && <Photo src={selfieUrl} alt="Selfie" />}
                 {memeUrl && <Photo src={memeUrl} alt="Meme" />}
