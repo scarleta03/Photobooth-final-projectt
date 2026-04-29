@@ -32,7 +32,7 @@ const Photo = styled.img`
   object-fit: cover;
   border: 2px solid #ddd;
   display: block;
-    
+
 `;
 
 // For the color block since it's a div not an image
@@ -68,10 +68,10 @@ const DownloadBtn = styled.button`
 `;
 
 interface PhotoStripProps {
-    selfieUrl: string | null;
-    catUrl: string | null;
-    memeUrl: string | null;
-    randomColor: string | null; // hex string like "#a3f1bc"
+    selfieUrl: string;
+    catUrl: string ;
+    memeUrl: string;
+    randomColor: string; // hex string like "#a3f1bc"
 }
 
 export default function PhotoStrip({ selfieUrl, catUrl, memeUrl, randomColor }: PhotoStripProps) {
@@ -92,10 +92,10 @@ export default function PhotoStrip({ selfieUrl, catUrl, memeUrl, randomColor }: 
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <Strip ref={stripRef}>
                 <Title> Photo Strip </Title>
-                {selfieUrl && <Photo src={selfieUrl} alt="Selfie" />}
-                {catUrl && <Photo src={catUrl} alt="HTTP Cat" />}
-                {memeUrl && <Photo src={memeUrl} alt="Meme" />}
-                {randomColor && <ColorBlock color={randomColor} />}
+                <Photo src={selfieUrl} alt="Selfie" />
+                <Photo src={catUrl} alt="HTTP Cat" />
+                <Photo src={memeUrl} alt="Meme" />
+                <ColorBlock color={randomColor} />
             </Strip>
 
             <DownloadBtn onClick={handleDownload} disabled={!allReady}>

@@ -37,11 +37,10 @@ interface GiphyResponse {
 
 // photoTaken flips to true when the user takes a photo, triggering a new meme fetch
 interface RandomMemeProps {
-  photoTaken: boolean
   setMemeUrl: (url: string) => void
 }
 
-export default function RandomMeme({ photoTaken, setMemeUrl }: RandomMemeProps) {
+export default function RandomMeme({ setMemeUrl }: RandomMemeProps) {
   // memeUrl holds the GIF link; memeTitle holds the GIF's name from Giphy
   const [memeUrl, setLocalMemeUrl] = useState<string | null>(null)
   const [memeTitle, setMemeTitle] = useState<string>('')
@@ -52,7 +51,6 @@ export default function RandomMeme({ photoTaken, setMemeUrl }: RandomMemeProps) 
 
   // Runs every time photoTaken changes — fetches a new random meme when it becomes true
   useEffect(() => {
-    if (!photoTaken) return
 
     const fetchMeme = async () => {
       setLoading(true)
@@ -83,10 +81,9 @@ export default function RandomMeme({ photoTaken, setMemeUrl }: RandomMemeProps) 
     }
 
     fetchMeme()
-  }, [photoTaken]) // dependency: re-runs each time photoTaken changes
+  }, []) // dependency: re-runs each time photoTaken changes
 
   // Hide the component entirely until a photo has been taken
-  if (!photoTaken) return null
 
   return (
       <div className="random-meme">
@@ -99,9 +96,7 @@ export default function RandomMeme({ photoTaken, setMemeUrl }: RandomMemeProps) 
         {memeUrl && !loading && (
             <>
               <MemeImg src={memeUrl} alt={memeTitle} />
-
             </>
-
         )}
         </StyledMeme>
       </div>

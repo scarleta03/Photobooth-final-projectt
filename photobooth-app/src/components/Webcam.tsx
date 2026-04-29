@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
     
 `
 
-export const StyledButton = styled.button`
+ const StyledButton = styled.button`
     margin: 20px;
     padding: 10px 30px;
     background-color: #dd9fe3;
