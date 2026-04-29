@@ -14,10 +14,10 @@ const Strip = styled.div`
   padding: 16px;
   box-shadow: 8px 8px 0px #111;
   width: 260px;
+    margin-top: 40px;
 `;
 
 const Title = styled.p`
-  font-family: "Courier New", monospace;
   font-size: 11px;
   font-weight: bold;
   letter-spacing: 4px;
@@ -32,6 +32,7 @@ const Photo = styled.img`
   object-fit: cover;
   border: 2px solid #ddd;
   display: block;
+    
 `;
 
 // For the color block since it's a div not an image

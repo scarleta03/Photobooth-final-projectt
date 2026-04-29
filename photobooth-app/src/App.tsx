@@ -93,13 +93,15 @@ function App() {
               {capturedImage && <RandomColor photoTaken={true}/>}
 
               {capturedImage && <RandomAnimal photoTaken={true}/>}
+
           </StyledBox>
+
               {capturedImage && memeUrl && (
                   <PhotoStrip
                       selfieUrl={capturedImage}
-                      catUrl={`https://http.cat/${randomCode}`}
                       memeUrl={memeUrl}
                       randomColor={randomColor}
+                      catUrl={`https://http.cat/${randomCode}`}
                   />
               )}
           </div>
