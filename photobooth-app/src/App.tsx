@@ -23,6 +23,7 @@ const StyledBox = styled.div`
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
+    
 
     @media screen and (max-width: 1000px) {
         flex-direction: column;
@@ -34,6 +35,7 @@ const StyledImg = styled.img`
     border: 10px ridge #B562BAFF;
     border-radius: 8px;
     object-fit: cover;
+    box-shadow: 8px 8px 0px #111;
     
 `
 const StyledHeader = styled.header`
@@ -93,13 +95,15 @@ function App() {
               {capturedImage && <RandomColor photoTaken={true}/>}
 
               {capturedImage && <RandomAnimal photoTaken={true}/>}
+
           </StyledBox>
+
               {capturedImage && memeUrl && (
                   <PhotoStrip
                       selfieUrl={capturedImage}
-                      catUrl={`https://http.cat/${randomCode}`}
                       memeUrl={memeUrl}
                       randomColor={randomColor}
+                      catUrl={`https://http.cat/${randomCode}`}
                   />
               )}
           </div>

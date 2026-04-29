@@ -69,6 +69,7 @@ export default function RandomMeme({ photoTaken, setMemeUrl }: RandomMemeProps) 
         const img = json.data.images.downsized_medium ?? json.data.images.original
         // Save the GIF URL so the <img> tag can display it
         setLocalMemeUrl(img.url)
+        // send up to App
         setMemeUrl(img.url)
         // Save the title so it shows as a caption below the GIF
         setMemeTitle(json.data.title)
