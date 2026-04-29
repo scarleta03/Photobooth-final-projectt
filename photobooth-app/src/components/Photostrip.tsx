@@ -98,9 +98,7 @@ export default function PhotoStrip({ selfieUrl, catUrl, memeUrl, randomColor }: 
                 {randomColor && <ColorBlock color={randomColor} />}
             </Strip>
 
-            <DownloadBtn onClick={handleDownload} disabled={!allReady}>
-                {allReady ? "⬇ Download" : "Waiting for photos…"}
-            </DownloadBtn>
+
         </div>
     );
 }
