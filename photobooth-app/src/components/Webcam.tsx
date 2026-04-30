@@ -58,7 +58,7 @@ function Webcam ({changeCapturedImage} : WebcamProps) {
                     objectFit: "cover",
                     border: "10px ridge #B562BAFF",
                     borderRadius: "8px",
-                    boxShadow: "8px 8px 0px #111",
+                    boxShadow: "-8px 8px 0px #111",
                 }}
             >
                 {({ getScreenshot }) => (
