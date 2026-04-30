@@ -127,7 +127,7 @@ function PhotoStrip({ selfieUrl, catUrl, memeUrl, randomColor }: PhotoStripProps
 
     useEffect(() => {
         if (!memeUrl) return;
-        setMemeDataUrl(null); // reset while new meme converts
+        setMemeDataUrl(''); // reset while new meme converts
         toDataUrl(memeUrl)
         .then(setMemeDataUrl)
         .catch(() => setMemeDataUrl(memeUrl)); // last resort: original URL
@@ -135,7 +135,7 @@ function PhotoStrip({ selfieUrl, catUrl, memeUrl, randomColor }: PhotoStripProps
 
     useEffect(() => {
         if (!catUrl) return;
-        setCatDataUrl(null); // reset while new cat converts
+        setCatDataUrl(''); // reset while new cat converts
         toDataUrl(catUrl)
         .then(setCatDataUrl)
         .catch(() => setCatDataUrl(catUrl)); // last resort: original URL

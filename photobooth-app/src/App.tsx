@@ -113,7 +113,7 @@ function App() {
                 {/* show captured photo after taking it */}
                 {capturedImage && <StyledImg src={capturedImage}/>}
                 {/* retake button resets capturedImage so the webcam reappears */}
-                {capturedImage && <StyledButton onClick={() => setCapturedImage(null)}>Retake</StyledButton>}
+                {capturedImage && <StyledButton onClick={() => setCapturedImage('')}>Retake</StyledButton>}
             </StyledContainer>
         </div>
         <div className="heyy">

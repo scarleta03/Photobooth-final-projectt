@@ -1,6 +1,7 @@
 // Faria Zaman
 
 import ReactWebcam from "react-webcam"
+import { useRef } from "react"
 import styled from "styled-components";
 
 // the resolutions for the webcam and the settings passed into
@@ -40,12 +41,14 @@ interface WebcamProps {
 
 // webcam component that accepts setCapturedImage from App.tsx to send the captured photo up to the parent
 function Webcam ({changeCapturedImage} : WebcamProps) {
+    const webcamRef = useRef<ReactWebcam>(null);
     console.log("webcam");
     return (
         <StyledDiv>
             {/*using react-webcam which renders a live camera feed*; all other restrictions
             and variables are given by the npm react-webcam page*/}
             <ReactWebcam
+                ref={webcamRef}
                 audio={false}
                 mirrored
                 height={360}
@@ -60,23 +63,17 @@ function Webcam ({changeCapturedImage} : WebcamProps) {
                     borderRadius: "8px",
                     boxShadow: "-8px 8px 0px #111",
                 }}
+            />
+            {/* Captures a screenshot from the webcam and
+            sends it up to App.tsx via setCapturedImage */}
+            <StyledButton
+                onClick={() => {
+                    const imageSrc = webcamRef.current?.getScreenshot();
+                    if (imageSrc) changeCapturedImage(imageSrc);
+                }}
             >
-                {({ getScreenshot }) => (
-                    <>
-                        {/* Captures a screenshot from the webcam and
-                        sends it up to App.tsx via setCapturedImage */}
-                        <StyledButton
-                            onClick={() => {
-                                const imageSrc = getScreenshot()
-                                changeCapturedImage(imageSrc)
-                            }}
-
-                        >
-                            Capture photo
-                        </StyledButton>
-                    </>
-                )}
-            </ReactWebcam>
+                Capture photo
+            </StyledButton>
         </StyledDiv>
     );
 }
