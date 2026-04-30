@@ -14,10 +14,8 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-router-dom": "^7.14.2",
-    "react-screen-capture": "^1.1.1",
     "react-webcam": "^7.2.0",
-    "styled-components": "^6.4.1",
-    "use-react-screenshot": "^4.0.0"
+    "styled-components": "^6.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
