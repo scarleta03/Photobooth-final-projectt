@@ -7,6 +7,7 @@ import RandomColor from "./components/RandomColor.tsx";
 import styled from "styled-components"
 import PhotoStrip from "./components/Photostrip.tsx";
 
+
 const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -49,6 +50,13 @@ const StyledImg = styled.img`
     object-fit: cover;
     box-shadow: 8px 8px 0px #111;
 `
+const StyledComponentWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+//√
+
 const StyledHeader = styled.header`
     width: 100%;
     background-color: #b562ba;
@@ -61,20 +69,13 @@ const StyledHeader = styled.header`
 `
 
 
-const codes = [100, 101, 102, 103, 200, 201, 202, 203, 204, 205, 206, 207, 208, 214, 226, 300, 301, 302, 303, 304, 305, 307, 308, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 428, 429, 431, 444, 450, 451, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 506, 507, 508, 509, 510, 511, 521, 522, 523, 525, 530, 599];
 
 
 function App() {
-    const [capturedImage, setCapturedImage] = useState<string | null>(null)
-
-    const [randomColor] = useState(
-        () => "#" + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, "0")
-    )
-    const [randomAnimal] = useState(
-        () =>  codes[Math.floor(Math.random() * codes.length)]
-    );
-
-    const [memeUrl, setMemeUrl] = useState<string | null>(null)
+    const [capturedImage, setCapturedImage] = useState('')
+    const [randomColor,setRandomColor] = useState('');
+    const [randomAnimal, setRandomAnimal] = useState(0);
+    const [memeUrl, setMemeUrl] = useState('')
 
   return (
       <>
@@ -85,7 +86,7 @@ function App() {
                   <h1>snap a pic</h1>
                   {!capturedImage && (
                       <Webcam
-                          setCapturedImage={setCapturedImage}
+                          changeCapturedImage={setCapturedImage}
                       />
                   )}
                   {capturedImage && <StyledImg src={capturedImage}/>}
@@ -96,15 +97,17 @@ function App() {
           <StyledBox>
               {capturedImage && (
                   <>
-                      <RandomMeme  setMemeUrl={setMemeUrl} />
-                      <RandomColor randomColor ={randomColor}/>
-                      <RandomAnimal randomAnimal = {randomAnimal}/>
+
+                      <RandomMeme  changeMemeUrl={setMemeUrl} />
+                      <StyledComponentWrapper>
+                          <RandomColor changeRandomColor ={setRandomColor}/>
+                      </StyledComponentWrapper>
+
+                      <RandomAnimal changeRandomAnimal = {setRandomAnimal}/>
                 </>
               )}
 
-
           </StyledBox>
-
               {capturedImage && memeUrl && (
                   <PhotoStrip
                       selfieUrl={capturedImage}

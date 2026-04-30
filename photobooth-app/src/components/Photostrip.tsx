@@ -122,7 +122,10 @@ interface PhotoStripProps {
         link.href = img;
         link.click();
     };
-
+    console.log("selfie: "+selfieUrl);
+    console.log("cat: "+catUrl);
+    console.log("meme: "+memeUrl);
+    console.log("randomColor: "+randomColor);
     return (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <Strip ref={stripRef}>
